@@ -24,7 +24,7 @@ def check_document_existance(user_doc_number):
     return doc_founded
 
 
-def get_doc_owner_name():
+def get_doc_owner_name(): #P
     user_doc_number = input('Введите номер документа - ')
     print()
     doc_exist = check_document_existance(user_doc_number)
@@ -35,7 +35,7 @@ def get_doc_owner_name():
                 return current_document['name']
 
 
-def get_all_doc_owners_names():
+def get_all_doc_owners_names(): #AP
     users_list = []
     for current_document in documents:
         try:
@@ -53,7 +53,7 @@ def remove_doc_from_shelf(doc_number):
             break
 
 
-def add_new_shelf(shelf_number=''):
+def add_new_shelf(shelf_number=''): #AS
     if not shelf_number:
         shelf_number = input('Введите номер полки - ')
     if shelf_number not in directories.keys():
@@ -67,7 +67,7 @@ def append_doc_to_shelf(doc_number, shelf_number):
     directories[shelf_number].append(doc_number)
 
 
-def delete_doc():
+def delete_doc(): #D
     user_doc_number = input('Введите номер документа - ')
     doc_exist = check_document_existance(user_doc_number)
     if doc_exist:
@@ -79,7 +79,7 @@ def delete_doc():
                 return doc_number, True
 
 
-def get_doc_shelf():
+def get_doc_shelf(): #S
     user_doc_number = input('Введите номер документа - ')
     doc_exist = check_document_existance(user_doc_number)
     if doc_exist:
@@ -88,7 +88,7 @@ def get_doc_shelf():
                 return directory_number
 
 
-def move_doc_to_shelf():
+def move_doc_to_shelf(): #M
     user_doc_number = input('Введите номер документа - ')
     user_shelf_number = input('Введите номер полки для перемещения - ')
     remove_doc_from_shelf(user_doc_number)
@@ -103,13 +103,13 @@ def show_document_info(document):
     print('{} "{}" "{}"'.format(doc_type, doc_number, doc_owner_name))
 
 
-def show_all_docs_info():
+def show_all_docs_info(): #L
     print('Список всех документов:\n')
     for current_document in documents:
         show_document_info(current_document)
 
 
-def add_new_doc():
+def add_new_doc(): #A
     new_doc_number = input('Введите номер документа - ')
     new_doc_type = input('Введите тип документа - ')
     new_doc_owner_name = input('Введите имя владельца документа- ')
