@@ -25,7 +25,10 @@ def check_document_existance(user_doc_number):
 
 
 def get_doc_owner_name(): #P
-    user_doc_number = input('Введите номер документа - ')
+    #user_doc_number = input('Введите номер документа - ')
+    user_doc_number = '2207 876234'
+    user_doc_number2 = '11-2'
+    user_doc_number3 = '10006'
     print()
     doc_exist = check_document_existance(user_doc_number)
     if doc_exist:
@@ -68,7 +71,9 @@ def append_doc_to_shelf(doc_number, shelf_number):
 
 
 def delete_doc(): #D
-    user_doc_number = input('Введите номер документа - ')
+    #user_doc_number = input('Введите номер документа - ')
+    user_doc_number = '123'
+
     doc_exist = check_document_existance(user_doc_number)
     if doc_exist:
         for current_document in documents:
@@ -110,10 +115,15 @@ def show_all_docs_info(): #L
 
 
 def add_new_doc(): #A
-    new_doc_number = input('Введите номер документа - ')
-    new_doc_type = input('Введите тип документа - ')
-    new_doc_owner_name = input('Введите имя владельца документа- ')
-    new_doc_shelf_number = input('Введите номер полки для хранения - ')
+    # new_doc_number = input('Введите номер документа - ')
+    # new_doc_type = input('Введите тип документа - ')
+    # new_doc_owner_name = input('Введите имя владельца документа- ')
+    # new_doc_shelf_number = input('Введите номер полки для хранения - ')
+    new_doc_number = '123'
+    new_doc_type = 'INN'
+    new_doc_owner_name = 'Ivan Petrov'
+    new_doc_shelf_number = '10'
+
     new_doc = {
         "type": new_doc_type,
         "number": new_doc_number,
