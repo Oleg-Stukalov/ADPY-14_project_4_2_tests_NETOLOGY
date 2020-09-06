@@ -1,4 +1,4 @@
-# ADPY-14-project_4-tests
+# ADPY-14-project_4_2-tests
 
 The project consists of 2 main modules:
 1. The module for testing of functions of project_5_1 (https://github.com/Oleg-Stukalov/PY-32_project_5_1_functions)
