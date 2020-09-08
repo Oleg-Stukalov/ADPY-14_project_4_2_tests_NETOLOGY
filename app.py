@@ -24,12 +24,9 @@ def check_document_existance(user_doc_number):
     return doc_founded
 
 
-def get_doc_owner_name(): #P
+def get_doc_owner_name(user_doc_number): #P
     #user_doc_number = input('Введите номер документа - ')
-    user_doc_number = '2207 876234'
-    user_doc_number2 = '11-2'
-    user_doc_number3 = '10006'
-    print()
+    # print()
     doc_exist = check_document_existance(user_doc_number)
     if doc_exist:
         for current_document in documents:
