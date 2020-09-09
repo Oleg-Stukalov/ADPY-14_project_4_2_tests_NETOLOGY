@@ -7,7 +7,8 @@ class TestFunctions(unittest.TestCase):
 
     #setUp method is overridden from the parent class TestCase
     def setUp(self):
-        update_date()
+        pass
+        #update_date()
         #self.user_doc_number() = user_doc_number()
         #self.functions = Functions_5_1()
 
@@ -47,11 +48,12 @@ class TestFunctions(unittest.TestCase):
         # проверяем, что оно создалось
         self.assertEqual(check_document_existance(new_doc_number), True)
 
-        # удаляем, что только что создали
-        delete_doc(new_doc_number)
+        # удаляем, что только что создали и проверяем, что оно удалилось
+        assert delete_doc(new_doc_number) == (new_doc_number, True)
+        #delete_doc(new_doc_number)
 
-        # проверяем, что оно удалилось
-        self.assertEqual(check_document_existance(new_doc_number), False)
+                # проверяем, что оно удалилось
+                #self.assertEqual(check_document_existance(new_doc_number), False)
 
     def test_show_all_docs_info(self):  # L
         new_doc_number = '2207 876234'
