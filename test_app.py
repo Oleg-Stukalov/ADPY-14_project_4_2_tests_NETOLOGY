@@ -53,13 +53,14 @@ class TestFunctions(unittest.TestCase):
         # проверяем, что оно удалилось
         self.assertEqual(check_document_existance(new_doc_number), False)
 
-    # def test_delete_doc(self):  # D
-    #     user_doc_number = '123'
-    #     delete_doc()
-    #     self.assertEqual(remove_doc_from_shelf(user_doc_number), user_doc_number)
-
     def test_show_all_docs_info(self):  # L
-        self.assertEqual(show_all_docs_info(), ('passport "2207 876234" "Василий Гупкин" NL', 'invoice "11-2" "Геннадий Покемонов" NL', 'insurance "10006" "Аристарх Павлов"'))
+        new_doc_number = '2207 876234'
+        new_doc_number2 = '11-2'
+        new_doc_number3 = '10006'
+
+        self.assertEqual(check_document_existance(new_doc_number), True)
+        self.assertEqual(check_document_existance(new_doc_number2), True)
+        self.assertEqual(check_document_existance(new_doc_number3), True)
 
 
 # Executing the tests in the above test case class
