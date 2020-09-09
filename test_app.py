@@ -1,5 +1,5 @@
 import unittest
-from app import get_doc_owner_name, show_all_docs_info, add_new_doc, delete_doc, remove_doc_from_shelf, append_doc_to_shelf, update_date, documents
+from app import get_doc_owner_name, show_all_docs_info, add_new_doc, delete_doc, remove_doc_from_shelf, append_doc_to_shelf, update_date, documents, check_document_existance
 
 NL = '\n'
 
@@ -45,14 +45,13 @@ class TestFunctions(unittest.TestCase):
         append_doc_to_shelf(new_doc_number, new_doc_shelf_number)
 
         # проверяем, что оно создалось
-        assert is_created
+        self.assertEqual(check_document_existance(new_doc_number), True)
 
         # удаляем, что только что создали
-        new_doc_number = '123'
         delete_doc(new_doc_number)
 
         # проверяем, что оно удалилось
-        assert is_deleted
+        self.assertEqual(check_document_existance(new_doc_number), False)
 
     # def test_delete_doc(self):  # D
     #     user_doc_number = '123'
