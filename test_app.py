@@ -48,7 +48,9 @@ class TestFunctions(unittest.TestCase):
         assert is_created
 
         # удаляем, что только что создали
-        delete()
+        new_doc_number = '123'
+        delete_doc(new_doc_number)
+
         # проверяем, что оно удалилось
         assert is_deleted
 

@@ -67,9 +67,9 @@ def append_doc_to_shelf(doc_number, shelf_number):
     directories[shelf_number].append(doc_number)
 
 
-def delete_doc(): #D
+def delete_doc(user_doc_number): #D
     #user_doc_number = input('Введите номер документа - ')
-    user_doc_number = '123'
+    #user_doc_number = '123'
 
     doc_exist = check_document_existance(user_doc_number)
     if doc_exist:
